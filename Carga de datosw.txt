@@ -1,0 +1,63 @@
+	Item x1  = new Item("Leche",0);
+        Item x2  = new Item("Crema de leche",0);
+        Item x3  = new Item("Azucar",0);
+        Item x4  = new Item("Dextroza",0);
+        Item x5  = new Item("Neutro",0);
+        Item x6 = new Item("Fructosoft",0);
+        Item x7  = new Item("Cacao",0);
+        Item x8  = new Item("Cobertura",0);
+        Item x9  = new Item("D.D.L Heladero",0);
+        Item x10  = new Item("D.D.L comun",0);
+        
+        
+        Item x11  = new Item("Almendrado",0);
+        Item x12  = new Item("Ananá",0);
+        Item x13  = new Item("Brownie",0);
+        Item x14  = new Item("Chantilly",0);
+        Item x15  = new Item("Frutilla",0);
+        Item x16  = new Item("Frutilla 80",0);
+        Item x17  = new Item("Kinder Bueno",0);
+        Item x18  = new Item("Lemon pie",0);
+        Item x19  = new Item("Limón",0);
+        Item x20  = new Item("Maracuyá",0);
+        Item x21  = new Item("Mascarpone",0);
+        Item x22  = new Item("Menta",0);
+        Item x23  = new Item("Pistacho",0);
+        Item x24  = new Item("Pomelo",0);
+        Item x25  = new Item("Tiramisú",0);
+        Item x26  = new Item("Vainilla",0);
+        
+        ArrayList<Item> lista = new ArrayList();
+        lista.add(x1);
+        lista.add(x2);
+        lista.add(x3);
+        lista.add(x4);
+        lista.add(x5);
+        lista.add(x6);
+        lista.add(x7);
+        lista.add(x8);
+        lista.add(x9);
+        lista.add(x10);
+        lista.add(x11);
+        lista.add(x12);
+        lista.add(x13);
+        lista.add(x14);
+        lista.add(x15);
+        lista.add(x16);
+        lista.add(x17);
+        lista.add(x18);
+        lista.add(x19);
+        lista.add(x20);
+        lista.add(x21);
+        lista.add(x22);
+        lista.add(x23);
+        lista.add(x24);
+        lista.add(x25);
+        lista.add(x26);
+        
+        Escritura escribir = new Escritura();
+        try {
+            escribir.guardarDatos(lista);
+        } catch (IOException ex) {
+            Logger.getLogger(NewMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
