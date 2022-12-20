@@ -1,5 +1,7 @@
 package Visual;
 
+import javax.swing.JOptionPane;
+
 public class Precios extends javax.swing.JFrame {
 
     ControlPrecio cp = new ControlPrecio();
@@ -21,6 +23,7 @@ public class Precios extends javax.swing.JFrame {
         listaItem = new javax.swing.JList<>();
         precioTxt = new javax.swing.JTextField();
         guardarTxt = new javax.swing.JButton();
+        cambiarkilosBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -64,6 +67,14 @@ public class Precios extends javax.swing.JFrame {
         });
         panelLista.add(guardarTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 110, 40));
 
+        cambiarkilosBtn.setText("Kilos x base");
+        cambiarkilosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cambiarkilosBtnActionPerformed(evt);
+            }
+        });
+        panelLista.add(cambiarkilosBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+
         panelBase.add(panelLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 450, 350));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -90,6 +101,12 @@ public class Precios extends javax.swing.JFrame {
         int y = listaItem.getSelectedIndex();
         cp.guardarCambio(x, y);
     }//GEN-LAST:event_guardarTxtActionPerformed
+
+    private void cambiarkilosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambiarkilosBtnActionPerformed
+        String aux = JOptionPane.showInputDialog("Ingresa la cantidad de kilos por base");
+        int x = Integer.parseInt(aux);
+        cp.setCantidadDeKilos(x);
+    }//GEN-LAST:event_cambiarkilosBtnActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -124,6 +141,7 @@ public class Precios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cambiarkilosBtn;
     private javax.swing.JButton guardarTxt;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

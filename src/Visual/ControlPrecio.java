@@ -9,7 +9,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ControlPrecio {
-
+    
+    static int cantidadDeKilos = 60;
     Lectura leer = new Lectura();
     Escritura escribir = new Escritura();
 
@@ -41,6 +42,7 @@ public class ControlPrecio {
                 aux = aux + (lista[i] * precios.get(i).precio);
             }
         }
+        aux = aux/cantidadDeKilos;
         System.out.println(aux);
         String retorno = Integer.toString((int) aux);
         return retorno; 
@@ -68,8 +70,9 @@ public class ControlPrecio {
             Logger.getLogger(ControlPrecio.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    public void llenarPantalla() {
-
+    
+    public void setCantidadDeKilos(int kilos){
+        cantidadDeKilos = kilos;
     }
+    
 }
