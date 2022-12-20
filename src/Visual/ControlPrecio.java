@@ -23,17 +23,19 @@ public class ControlPrecio {
         try {
             for (int i = 0; i < 11; i++) {
                 if (cantidad.get(i).equals("")) {   //en caso de que no haya nada significa que no se usa ese elemento
-                    lista[i] = 0;                   //por eso lo deja en 0
+                    lista[i] = 0;                               //por eso lo deja en 0
                 } else {
                     lista[i] = Integer.parseInt(cantidad.get(i));   //Guarda
                     lista[i] = lista[i] / 1000;
                 }
+                //sout solo para corroborar que los datos estan correctos en la parte de pruebas
                 System.out.println(precios.get(i).nombre);
                 System.out.println(lista[i]*precios.get(i).precio);
             }     
         } catch (NumberFormatException nfe) {
             throw nfe;
         }
+        //sout solo para corroborar que los datos estan correctos en la parte de pruebas
         System.out.println("-------------------");
         for (int i = 0; i < 11; i++) {
             if (i == 10) {
@@ -43,18 +45,23 @@ public class ControlPrecio {
             }
         }
         aux = aux/cantidadDeKilos;
+        //sout solo para corroborar que los datos estan correctos en la parte de pruebas
         System.out.println(aux);
+        //convertir el int a String
         String retorno = Integer.toString((int) aux);
         return retorno; 
     }
 
     public String buscarPrecios(int x) {
         try {
+            //traemos la lista
             ArrayList<Item> precios = leer.leerLista();
+            //buscamos el precio especifico
             String aux = Integer.toString((int) precios.get(x).precio);
             return aux;
         } catch (IOException ex) {
             Logger.getLogger(ControlPrecio.class.getName()).log(Level.SEVERE, null, ex);
+            //return string vacio en el caso de que se produzca un error
             return "";
         }
     }
